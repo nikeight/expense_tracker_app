@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="progress_dot_style">
+        <item name="android:layout_width">12dp</item>
+        <item name="android:layout_height">12dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="tint">@color/colorVariantOnPrimary</item>
+        <item name="android:src">@drawable/ic_progress_dot_24</item>
+    </style>
+</resources>
