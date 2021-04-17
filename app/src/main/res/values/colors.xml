@@ -8,4 +8,6 @@
     <color name="colorOnSecondary">#FFFFFF</color>
     <color name="colorVariantOnSecondary">#B4ABB5</color>
 
+    <color name="red">#D11818</color>
+
 </resources>
