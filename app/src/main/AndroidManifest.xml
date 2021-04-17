@@ -10,9 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Expense_tracker_app">
-        <activity
-            android:name=".view.activities.SplashScreen"
-            android:theme="@style/AppTheme.AppCompat.Light.NoActionBar.FullScreen">
+        <activity android:name=".view.activities.onboarding.OnBoardingActivity" />
+        <activity android:name=".view.activities.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.activities.MainActivity" />
-
     </application>
 
 </manifest>

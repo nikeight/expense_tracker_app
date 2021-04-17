@@ -14,6 +14,7 @@ class SplashScreen : AppCompatActivity() {
 
         // Changing the Activity.
         // Todo using Handler is not the best practice.
+        //TODO start the onboarding activity only if user is opening for first time else go to main activity
 
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this@SplashScreen, MainActivity::class.java))
