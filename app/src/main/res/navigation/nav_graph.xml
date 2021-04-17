@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.appchef.expense_tracker_app.view.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_expense_tracker"
+        android:name="com.appchef.expense_tracker_app.view.fragment.ExpenseTrackFragment"
+        android:label="ExpenseTrack"
+        tools:layout="@layout/fragment_expense_track" />
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.appchef.expense_tracker_app.view.fragment.AddExpensesFragment"
+        android:label="AddExpenses"
+        tools:layout="@layout/fragment_add_expenses" />
+
+    <fragment
+        android:id="@+id/navigation_group_chat"
+        android:name="com.appchef.expense_tracker_app.view.fragment.GroupChatFragment"
+        android:label="GroupChat"
+        tools:layout="@layout/fragment_group_chat" />
+
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.appchef.expense_tracker_app.view.fragment.AccountFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_account" />
+
+</navigation>
