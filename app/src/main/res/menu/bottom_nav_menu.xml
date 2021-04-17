@@ -2,20 +2,29 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Home"
+    <item
+        android:id="@+id/navigation_home"
+        android:title="Home"
         android:icon="@drawable/ic_home_vector"/>
 
-    <item android:title="Expense"
+    <item
+        android:id="@+id/navigation_expense_tracker"
+        android:title="Expense"
         android:icon="@drawable/ic_expense_tracker_vector"/>
 
-    <item android:title="Add"
+    <item
+        android:id="@+id/navigation_add"
+        android:title="Add"
         android:icon="@drawable/ic_add_vector"/>
 
-
-    <item android:title="Groups"
+    <item
+        android:id="@+id/navigation_group_chat"
+        android:title="Groups"
         android:icon="@drawable/ic_group_chat_vector"/>
 
-    <item android:title="Account"
+    <item
+        android:id="@+id/navigation_account"
+        android:title="Account"
         android:icon="@drawable/ic_account_vector"/>
 
 </menu>
