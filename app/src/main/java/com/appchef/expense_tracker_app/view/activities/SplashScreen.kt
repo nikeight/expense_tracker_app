@@ -1,12 +1,11 @@
 package com.appchef.expense_tracker_app.view.activities
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.appcompat.app.AppCompatActivity
 import com.appchef.expense_tracker_app.R
-import com.appchef.expense_tracker_app.view.activities.onboarding.OnBoardingActivity
 
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +17,8 @@ class SplashScreen : AppCompatActivity() {
         //TODO start the onboarding activity only if user is opening for first time else go to main activity
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this@SplashScreen, OnBoardingActivity::class.java))
+            startActivity(Intent(this@SplashScreen, MainActivity::class.java))
             finish()
-        }, 700)
+        }, 2000)
     }
 }
