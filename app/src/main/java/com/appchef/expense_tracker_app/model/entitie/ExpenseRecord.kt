@@ -9,7 +9,7 @@ import java.util.*
 @Entity(tableName = "expense_record_table")
 data class ExpenseRecord(
     @ColumnInfo val amount: String,
-    @ColumnInfo val date: Date,
+    @ColumnInfo val date: String,
     @ColumnInfo val category: String,
     @ColumnInfo val title: String,
 
