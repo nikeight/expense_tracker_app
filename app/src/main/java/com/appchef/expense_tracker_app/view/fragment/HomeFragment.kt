@@ -78,8 +78,8 @@ class HomeFragment : Fragment() {
                     val msgTime = cur.getString(cur.getColumnIndex("date")).toLong()
 
 
+                    if (!msgAddress.isNullOrEmpty())
                     parsingTransactionalSms(msgTime, msgBody, id, msgAddress)
-
 
                 } while (cur.moveToNext())
                 if (!cur.isClosed) {

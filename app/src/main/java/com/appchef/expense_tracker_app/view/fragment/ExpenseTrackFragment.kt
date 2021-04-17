@@ -131,6 +131,7 @@ class ExpenseTrackFragment : Fragment() {
                     val msgTime = cur.getString(cur.getColumnIndex("date")).toLong()
 
 
+                    if (!msgAddress.isNullOrEmpty())
                     parsingTransactionalSms(msgTime, msgBody, id, msgAddress)
 
 

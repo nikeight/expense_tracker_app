@@ -5,7 +5,7 @@ import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 data class SmsModel(val id:String, val body:String, val address:String, val msgTime:Long){
-    var bankName:String = address.subSequence(3,9) as String
+    var bankName:String = address
     var amountPaid:Double = 0.0
     var monthOfSms= Date(msgTime).month
     var yearOfSms= Date(msgTime).year+1900
