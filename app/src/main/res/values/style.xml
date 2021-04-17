@@ -8,4 +8,34 @@
         <item name="tint">@color/colorVariantOnPrimary</item>
         <item name="android:src">@drawable/ic_progress_dot_24</item>
     </style>
+
+    <style name="line_separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/colorVariantOnPrimary</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
+    <style name="chip">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/colorVariantOnPrimary</item>
+        <item name="chipBackgroundColor">@color/primaryBackgroundColor</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/colorVariantOnPrimary</item>
+        <item name="iconTint">@color/colorVariantOnPrimary</item>
+        <item name="checkedIconTint">@color/colorVariantOnPrimary</item>
+    </style>
+
+    <style name="filterChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/colorVariantOnPrimary</item>
+        <item name="chipBackgroundColor">@color/primaryBackgroundColor</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/colorVariantOnPrimary</item>
+        <item name="iconTint">@color/colorVariantOnPrimary</item>
+        <item name="checkedIconTint">@color/colorVariantOnPrimary</item>
+    </style>
 </resources>
