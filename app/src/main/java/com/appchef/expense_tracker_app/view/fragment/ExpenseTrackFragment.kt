@@ -5,12 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.appchef.expense_tracker_app.application.ExpenseTrackerApplication
 import com.appchef.expense_tracker_app.databinding.FragmentExpenseTrackBinding
+import com.appchef.expense_tracker_app.viewmodel.ExpenseRecordViewModel
+import com.appchef.expense_tracker_app.viewmodel.ExpenseTrackerViewModelFactory
 
 class ExpenseTrackFragment : Fragment() {
 
     // binding object.
     private lateinit var expenseTrackBinding: FragmentExpenseTrackBinding
+
+    // View Model Object.
+    private val expenseDetailViewModel: ExpenseRecordViewModel by viewModels {
+        ExpenseTrackerViewModelFactory((requireActivity().application as ExpenseTrackerApplication).repository)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,4 +29,21 @@ class ExpenseTrackFragment : Fragment() {
         expenseTrackBinding = FragmentExpenseTrackBinding.inflate(inflater, container, false)
         return expenseTrackBinding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // This is for test purpose only needed to be updated or deleted.
+        expenseDetailViewModel.expenseDetails.observe(viewLifecycleOwner) { expense ->
+            expense.let {
+                for (item in it) {
+
+                    expenseTrackBinding.budgetTv.text = item.amount
+                    expenseTrackBinding.savedTv.text = item.date
+                    expenseTrackBinding.spentTv.text = item.title
+                }
+            }
+        }
+    }
 }
+
