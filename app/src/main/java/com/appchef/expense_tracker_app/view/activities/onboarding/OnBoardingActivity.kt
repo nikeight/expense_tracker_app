@@ -15,6 +15,7 @@ import com.appchef.expense_tracker_app.view.activities.MainActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
 
 class OnBoardingActivity : AppCompatActivity() {
 
@@ -23,7 +24,7 @@ class OnBoardingActivity : AppCompatActivity() {
     private var currentPage: Int = 0
     private val maxPages: Int = 4
 
-    private val SIGN_IN_REQUEST=1001
+    private val SIGN_IN_REQUEST = 1001
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -155,19 +156,23 @@ class OnBoardingActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode==SIGN_IN_REQUEST){
-            if(resultCode== Activity.RESULT_OK){
+        if (requestCode == SIGN_IN_REQUEST) {
+            if (resultCode == Activity.RESULT_OK) {
                 //successfully signed in
-                startActivity(Intent(this@OnBoardingActivity,MainActivity::class.java))
-            }else{
+                finish()
+                startActivity(Intent(this@OnBoardingActivity, MainActivity::class.java))
+            } else {
+                FirebaseAuth.getInstance().signOut()
                 val response = IdpResponse.fromResultIntent(data)
-                if(response!=null){
+                if (response != null) {
                     MaterialAlertDialogBuilder(this@OnBoardingActivity)
                         .setTitle("Couldn't sign in")
                         .setMessage(response.error?.localizedMessage ?: "Some error occurred")
-                        .setPositiveButton("Ok", DialogInterface.OnClickListener { dialogInterface, i ->
-                            dialogInterface.dismiss()
-                        })
+                        .setPositiveButton(
+                            "Ok",
+                            DialogInterface.OnClickListener { dialogInterface, i ->
+                                dialogInterface.dismiss()
+                            })
                         .show()
                 }
             }

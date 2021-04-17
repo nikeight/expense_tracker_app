@@ -3,6 +3,7 @@ package com.appchef.expense_tracker_app.view.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
@@ -27,16 +28,19 @@ class SplashScreen : AppCompatActivity() {
         //setting the dark mode accordingly
         AppCompatDelegate.setDefaultNightMode(darkModePref)
 
-        // Todo using Handler is not the best practice.
-        //TODO start the onboarding activity only if user is opening for first time else go to main activity
+        //timer of 2 seconds for splash screen
+        val timer = object : CountDownTimer(2000,1000){
+            override fun onTick(p0: Long) {
+                //Do nothing
+            }
 
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            if(FirebaseAuth.getInstance().currentUser ==null)
-                startActivity(Intent(this@SplashScreen, OnBoardingActivity::class.java))
-            else
-                startActivity(Intent(this@SplashScreen, MainActivity::class.java))
-            finish()
-        }, 2000)
+            override fun onFinish() {
+                if(FirebaseAuth.getInstance().currentUser ==null)
+                    startActivity(Intent(this@SplashScreen, OnBoardingActivity::class.java))
+                else
+                    startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+            }
+        }
+        timer.start()
     }
 }
