@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Add a expense we might have missed."
+        app:hintTextColor="@color/secondaryBackgroundColor"
         android:padding="4dp"
         android:layout_margin="8dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -18,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
+            android:textColor="@color/colorOnSecondary"
             android:textSize="15sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -28,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/expense_til"
         android:hint="Title"
+        app:hintTextColor="@color/secondaryBackgroundColor"
         android:padding="4dp"
         android:layout_margin="8dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -37,6 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:textColor="@color/colorOnSecondary"
             android:textSize="15sp" />
 
     </com.google.android.material.textfield.TextInputLayout>

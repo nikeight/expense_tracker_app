@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Expense_tracker_app">
         <activity android:name=".view.activities.onboarding.OnBoardingActivity" />
-        <activity android:name=".view.activities.SplashScreen">
+        <activity android:name=".view.activities.SplashScreen"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

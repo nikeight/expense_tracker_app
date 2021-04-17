@@ -2,6 +2,8 @@
     <string name="app_name">expense_tracker_app</string>
     <string name="company_name">AppChef</string>
 
+    <string name="dark_mode_pref_key">darkModePref</string>
+
     <string-array name="category_array">
         <item>Default</item>
         <item>Fuel</item>
