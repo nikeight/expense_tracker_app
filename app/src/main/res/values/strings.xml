@@ -3,4 +3,13 @@
     <string name="company_name">AppChef</string>
 
     <string name="dark_mode_pref_key">darkModePref</string>
+
+    <string-array name="category_array">
+        <item>Default</item>
+        <item>Fuel</item>
+        <item>Food</item>
+        <item>Entertainment</item>
+        <item>Bills</item>
+    </string-array>
+
 </resources>

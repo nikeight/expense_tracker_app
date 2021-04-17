@@ -48,7 +48,7 @@
    <Spinner
        android:id="@+id/category_spinner"
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
+       android:layout_height="32dp"
        android:layout_below="@+id/title_til"
        android:layout_margin="8dp"/>
 
