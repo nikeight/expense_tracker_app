@@ -24,5 +24,7 @@
 
         <item name="android:textColor">@color/colorOnPrimary</item>
         <item name="fontFamily">@font/work_sans_medium</item>
+
+        <item name="colorAccent">@color/colorOnPrimary</item>
     </style>
 </resources>
