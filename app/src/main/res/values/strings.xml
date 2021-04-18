@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">expense_tracker_app</string>
+    <string name="app_name">Expense Tracker</string>
     <string name="company_name">AppChef</string>
 
     <string name="dark_mode_pref_key">darkModePref</string>
