@@ -2,7 +2,50 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:padding="14dp">
+
+<com.github.mikephil.charting.charts.BarChart
+    android:id="@+id/barChart"
+    android:layout_width="match_parent"
+    android:layout_height="560dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/expenditureHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expenditure of the Month: "
+        android:layout_below="@+id/barChart"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2892/-"
+        android:layout_toRightOf="@+id/expenditureHeading"
+        android:layout_below="@id/barChart"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="4dp"/>
+
+    <TextView
+        android:id="@+id/savingHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saving of the Month: "
+        android:layout_below="@+id/expenditureHeading"
+        android:layout_margin="12dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="62,000/-"
+        android:layout_toRightOf="@+id/savingHeading"
+        android:layout_below="@id/expenditureHeading"
+        android:layout_margin="12dp"/>
+
 
 
 </RelativeLayout>

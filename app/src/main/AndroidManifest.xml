@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.appchef.expense_tracker_app">
 
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
     <application
         android:name=".application.ExpenseTrackerApplication"
         android:allowBackup="true"
