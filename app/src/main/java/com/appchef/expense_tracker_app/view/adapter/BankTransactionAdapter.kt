@@ -2,6 +2,7 @@ package com.appchef.expense_tracker_app.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.appchef.expense_tracker_app.databinding.BankCardViewHomeBinding
@@ -16,11 +17,19 @@ class BankTransactionAdapter(private val fragment: Fragment) :
         val binding = BankCardViewHomeBinding.inflate(
             LayoutInflater.from(fragment.context), parent, false
         )
+
+        Toast.makeText(fragment.context,"Yaha tk aya kya?",Toast.LENGTH_SHORT).show()
+
         return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
+        val list = bankList[position]
+
+        holder.bankNameTv.text = list.title
+        holder.totalAmountTv.text = list.amount
+        holder.updatedDateTv.text = list.date
     }
 
     override fun getItemCount(): Int {
