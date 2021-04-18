@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:text="Google"
+                android:text="Google Pay"
                 android:textSize="18dp"
                 android:fontFamily="@font/work_sans_medium"/>
 

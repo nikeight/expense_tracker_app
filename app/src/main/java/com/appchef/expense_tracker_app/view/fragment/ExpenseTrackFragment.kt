@@ -33,17 +33,6 @@ class ExpenseTrackFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // This is for test purpose only needed to be updated or deleted.
-        expenseDetailViewModel.expenseDetails.observe(viewLifecycleOwner) { expense ->
-            expense.let {
-                for (item in it) {
-
-                    expenseTrackBinding.budgetTv.text = item.amount
-                    expenseTrackBinding.savedTv.text = item.date
-                    expenseTrackBinding.spentTv.text = item.title
-                }
-            }
-        }
     }
 }
 

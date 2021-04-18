@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setUpDetailCard()
-        setUpBankAdapter()
+//        setUpBankAdapter()
         setUpTransactionAdapter()
         // Todo @Anubhav sending the List item here thus changing the models.
     }
@@ -50,31 +50,31 @@ class HomeFragment : Fragment() {
         val transactionAdapter : TransactionAdapter = TransactionAdapter(this@HomeFragment)
 
         // Setting the adapter
-        homeBinding.banKRecyclerView.adapter = transactionAdapter
+//        homeBinding.banKRecyclerView.adapter = transactionAdapter
     }
 
-    private fun setUpBankAdapter() {
-        // setting the layout.
-        homeBinding.banKRecyclerView.layoutManager = LinearLayoutManager(requireActivity(),LinearLayoutManager.HORIZONTAL,false)
-
-        // Setting the adapter
-        val bankAdapter = BankTransactionAdapter(this@HomeFragment)
-
-        // Mock list
-        val list = ArrayList<ExpenseRecord>()
-        val obj1 = ExpenseRecord("555","31/04/21,","Bills","Google Pay",10)
-        val obj2 = ExpenseRecord("444","30/04/21","Bills","Phone Pe",11)
-
-        list.add(obj1)
-        list.add(obj2)
-
-        // Setting the adapter
-        homeBinding.banKRecyclerView.adapter = bankAdapter
-
-        // Sending the list
-        bankAdapter.bankList(list)
-        bankAdapter.notifyDataSetChanged()
-
-        Toast.makeText(requireContext(),"Yaha tk aya kya?", Toast.LENGTH_SHORT).show()
-    }
+//    private fun setUpBankAdapter() {
+//        // setting the layout.
+//        homeBinding.banKRecyclerView.layoutManager = LinearLayoutManager(requireActivity(),LinearLayoutManager.HORIZONTAL,false)
+//
+//        // Setting the adapter
+//        val bankAdapter = BankTransactionAdapter(this@HomeFragment)
+//
+//        // Mock list
+//        val list = ArrayList<ExpenseRecord>()
+//        val obj1 = ExpenseRecord("555","31/04/21,","Bills","Google Pay",10)
+//        val obj2 = ExpenseRecord("444","30/04/21","Bills","Phone Pe",11)
+//
+//        list.add(obj1)
+//        list.add(obj2)
+//
+//        // Setting the adapter
+//        homeBinding.banKRecyclerView.adapter = bankAdapter
+//
+//        // Sending the list
+//        bankAdapter.bankList(list)
+//        bankAdapter.notifyDataSetChanged()
+//
+//        Toast.makeText(requireContext(),"Yaha tk aya kya?", Toast.LENGTH_SHORT).show()
+//    }
 }

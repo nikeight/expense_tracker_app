@@ -27,9 +27,9 @@ class BankTransactionAdapter(private val fragment: Fragment) :
 
         val list = bankList[position]
 
-        holder.bankNameTv.text = list.title
-        holder.totalAmountTv.text = list.amount
-        holder.updatedDateTv.text = list.date
+        holder.bankNameTv.text = "Google"
+        holder.totalAmountTv.text = "555/-"
+        holder.updatedDateTv.text = "28/04/21"
     }
 
     override fun getItemCount(): Int {
