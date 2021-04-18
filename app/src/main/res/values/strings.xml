@@ -3,6 +3,8 @@
     <string name="company_name">AppChef</string>
 
     <string name="dark_mode_pref_key">darkModePref</string>
+    <string name="income_pref_key">incomePref</string>
+    <string name="budget_pref_key">budgetPref</string>
 
     <string-array name="category_array">
         <item>Default</item>
