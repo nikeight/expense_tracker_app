@@ -1,11 +1,15 @@
 package com.appchef.expense_tracker_app.view.fragment
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -13,6 +17,7 @@ import com.appchef.expense_tracker_app.R
 import com.appchef.expense_tracker_app.databinding.FragmentAccountBinding
 import com.appchef.expense_tracker_app.view.activities.SplashScreen
 import com.bumptech.glide.Glide
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -29,6 +34,7 @@ class AccountFragment : Fragment() {
         var user=FirebaseAuth.getInstance().currentUser
 
         setupDarkModeControls()
+        setupIncomeBudget()
 
         activity?.let {
             Glide.with(it)
@@ -44,7 +50,59 @@ class AccountFragment : Fragment() {
             startActivity(Intent(activity,SplashScreen::class.java))
         }
 
+
         return binding.root
+    }
+
+    private fun setupIncomeBudget(){
+        val incomePref = activity?.getSharedPreferences(getString(R.string.income_pref_key),Context.MODE_PRIVATE)
+        val budgetPref=activity?.getSharedPreferences(getString(R.string.budget_pref_key),Context.MODE_PRIVATE)
+
+        val income = incomePref?.getFloat(getString(R.string.income_pref_key),0.0f)
+        val budget = incomePref?.getFloat(getString(R.string.budget_pref_key),0.0f)
+
+        binding.incomeText.text=income.toString()
+        binding.budgetText.text=budget.toString()
+
+        binding.incomeEditBtn.setOnClickListener {
+            val et=EditText(context)
+            et.inputType=InputType.TYPE_NUMBER_FLAG_SIGNED
+            et.setText(income.toString())
+
+            AlertDialog.Builder(requireContext())
+                .setTitle("Change income")
+                .setView(et)
+                .setPositiveButton("Set",DialogInterface.OnClickListener{dialogInterface, i ->
+                    incomePref?.edit()
+                        ?.putFloat(getString(R.string.income_pref_key),et.text.toString().toFloat())
+                        ?.apply()
+                    setupIncomeBudget()
+                })
+                .setNegativeButton("Cancel",DialogInterface.OnClickListener{dialogInterface, i ->
+                    dialogInterface.dismiss()
+                }).show()
+        }
+
+        binding.budgetEditBtn.setOnClickListener {
+            val et=EditText(context)
+            et.inputType=InputType.TYPE_NUMBER_FLAG_SIGNED
+            et.setText(budget.toString())
+
+            var dialog = MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Change budget")
+                .setView(et)
+                .setPositiveButton("Set",DialogInterface.OnClickListener{dialogInterface, i ->
+                    incomePref?.edit()
+                        ?.putFloat(getString(R.string.budget_pref_key),et.text.toString().toFloat())
+                        ?.apply()
+                    setupIncomeBudget()
+                })
+                .setNegativeButton("Cancel",DialogInterface.OnClickListener{dialogInterface, i ->
+                    dialogInterface.dismiss()
+                }).create()
+            /*dialog.getButton(DialogInterface.BUTTON_POSITIVE)?.setTextColor(R.color.colorOnPrimary)
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE)?.setTextColor(R.color.colorOnPrimary)*/
+        }
     }
 
     private fun setupDarkModeControls() {
