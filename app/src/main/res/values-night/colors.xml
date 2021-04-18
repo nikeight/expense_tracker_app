@@ -7,4 +7,7 @@
     <color name="secondaryBackgroundColor">#DDDCDB</color>
     <color name="colorOnSecondary">#0F255F</color>
     <color name="colorVariantOnSecondary">#78909C</color>
+
+    <color name="red">#D11818</color>
+
 </resources>
