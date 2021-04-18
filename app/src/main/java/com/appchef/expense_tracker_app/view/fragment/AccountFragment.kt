@@ -50,7 +50,6 @@ class AccountFragment : Fragment() {
             startActivity(Intent(activity,SplashScreen::class.java))
         }
 
-
         return binding.root
     }
 
@@ -64,12 +63,13 @@ class AccountFragment : Fragment() {
         binding.incomeText.text=income.toString()
         binding.budgetText.text=budget.toString()
 
+        //TODO handle app crash for alphabets inputed
         binding.incomeEditBtn.setOnClickListener {
             val et=EditText(context)
             et.inputType=InputType.TYPE_NUMBER_FLAG_SIGNED
             et.setText(income.toString())
 
-            AlertDialog.Builder(requireContext())
+            MaterialAlertDialogBuilder(requireContext(),R.style.AlertDialogTheme)
                 .setTitle("Change income")
                 .setView(et)
                 .setPositiveButton("Set",DialogInterface.OnClickListener{dialogInterface, i ->
@@ -88,7 +88,7 @@ class AccountFragment : Fragment() {
             et.inputType=InputType.TYPE_NUMBER_FLAG_SIGNED
             et.setText(budget.toString())
 
-            var dialog = MaterialAlertDialogBuilder(requireContext())
+            MaterialAlertDialogBuilder(requireContext(),R.style.AlertDialogTheme)
                 .setTitle("Change budget")
                 .setView(et)
                 .setPositiveButton("Set",DialogInterface.OnClickListener{dialogInterface, i ->
@@ -99,9 +99,7 @@ class AccountFragment : Fragment() {
                 })
                 .setNegativeButton("Cancel",DialogInterface.OnClickListener{dialogInterface, i ->
                     dialogInterface.dismiss()
-                }).create()
-            /*dialog.getButton(DialogInterface.BUTTON_POSITIVE)?.setTextColor(R.color.colorOnPrimary)
-            dialog.getButton(DialogInterface.BUTTON_POSITIVE)?.setTextColor(R.color.colorOnPrimary)*/
+                }).show()
         }
     }
 
